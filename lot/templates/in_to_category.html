@@ -1,0 +1,37 @@
+{% extends 'main.html' %}
+
+{% block Lots %}
+	<div class="Lots">
+	<p class="count_lots">Найдено: {{ Lots|length }}</p><br>
+	<div class="container">
+		<div class="row">
+	{% for Lot in Lots %}
+
+  <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-0 col-md-3 col-md-3">
+    <div class="thumbnail Lot">
+    <a href="http://localhost:8181/show/show_details/{{Lot.id}}/"><h4  class = "text-center">{{ Lot.Lot_title }}</h4></a>
+      <img src="{{ Lot.Lot_main_icon.url }}" alt = "{{Lot.Lot_title}}" width = "200" height = "300">
+      <div class="caption">
+        	<p>Прсмотров: {{Lot.Lot_viewv}} </p>
+			<p>Цена: {{ Lot.Lot_price }} Руб.</p>
+			<p>Состояние: {{ Lot.Lot_state }}</p>
+			<p>Автор: {{ Lot.User_creator }}</p>
+      </div>
+    </div>
+  </div>
+
+	{% endfor %}
+  </div>
+  </div>
+	</div>
+{% endblock %}
+
+<!--<div class="Lot">		
+ 			<a href="http://localhost:8181/show/show_details/{{Lot.id}}"><h4  class="text-center">{{ Lot.Lot_title }}</h4></a>
+			<h6 class="text-center">Созданa: {{Lot.Lot_date}}</h6><br />
+			<img src="{{ Lot.Lot_main_icon.url }}" alt="{{Lot.Lot_title}}" class="center-block"><br /><br />
+			<p>Прсмотров: {{Lot.Lot_viewv}} </p>
+			<p>Цена: {{ Lot.Lot_price }} Руб.</p>
+			<p>Состояние: {{ Lot.Lot_state }}</p>
+			<p>Автор: {{ Lot.User_creator }}</p>
+	</div>-->

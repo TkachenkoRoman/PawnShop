@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block login %}
+
+		<img src="{{ this_user.org_pic.url }}" alt="avatart_{{ this_user.organization_name }}" width="200" class="avatar">
+		<div class="menu">
+			<ul>
+				<li><a href="http://localhost:8181/user/show_profil/">Общие данный</a></li>
+				<li><a href="http://localhost:8181/user/show_me_my_lot/">Лоты</a></li>
+				<li><a href="http://localhost:8181/user/my_messages/">Сообщения <span class="badge ">2</span></a> </li>
+				<li><a href="http://localhost:8181/user/edit_profile/">Редактировать профиль</a></li>
+				<li><a href="http://localhost:8181/user/change_password/">Изменить пароль</a></li>
+				<li><a href="http://localhost:8181/user/logout/">Выход</a></li>
+			</ul>
+		</div>
+			<div class = "edit_lot">
+			<img src="{{ curent_main_icon }}" alt="curent_main_icon" width = "280" class = "center-block">
+			<form action="#" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				{{ form }}
+				{{ form2 }}
+				<input type="submit" class="btn btn-default" value = "Сохранить"> 
+			</form>
+			</div>
+{% endblock %}

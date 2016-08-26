@@ -1,0 +1,21 @@
+{% extends 'main.html' %} 
+{% block login %}
+<div class="login_block center-block">
+    <div class="login_forms form-group">
+        <form action="http://localhost:8181/user/login/" method="post">
+            {% csrf_token %}
+            <div class="warning_error_or_alert alert alert-danger"><p id="error_or_alert">
+            {{ err }}</p></div>
+            <label for="username">Имя пользователя</label>
+            <input type="text" name="username" id="username" class="form-control" placeholder="Введите имя пользователя">
+            <label for="password">Пароль</label>
+            <input type="password" name="password" id="password" class="form-control" placeholder="Введите пароль"> 
+            {% if login_error %}
+            <label class="error">{{ login_error }}</label>
+            {% endif %}
+            <input class="btn btn-default" type="submit" value="Войти">
+        </form>
+        <p>{{ req_data }}</p>
+    </div>
+</div>
+{% endblock %}

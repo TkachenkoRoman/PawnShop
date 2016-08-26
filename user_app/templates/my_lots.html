@@ -1,0 +1,64 @@
+{% extends 'main.html' %}
+
+{% block login %}
+<img src="{{ this_user.org_pic.url }}" alt="avatart_{{ this_user.organization_name }}" width="200" class="avatar">
+<div class="menu">
+	<ul>
+		<li><a href="http://localhost:8181/user/show_profil/">Общие данный</a></li>
+		<li><a href="http://localhost:8181/user/show_me_my_lot/">Лоты</a></li>
+		<li><a href="http://localhost:8181/user/my_messages/">Сообщения <span class="badge ">42</span></a> </li>
+		<li><a href="http://localhost:8181/user/edit_profile/">Редактировать профиль</a></li>
+		<li><a href="http://localhost:8181/user/change_password/">Изменить пароль</a></li>
+		<li><a href="http://localhost:8181/user/logout/">Выход</a></li>
+	</ul>
+</div>
+<div class="my_lots">
+----Всего: {{ lots|length }}---- <br /><br />
+ <br><br>
+<div class="btn-group btn-group-justified top_buttons">
+  <div class="btn-group">
+    <a class="btn btn-default" href = "http://localhost:8181/user/show_me_my_lot/add/" >Добавить</a>
+  </div>
+  <div class="btn-group">
+    <a class="btn btn-default"  id = "del_my_lot">Удалить выбранные</a>
+  </div>
+</div>
+ 	<select class="btn btn-default" name="sort_by" id="sort_by">
+ 		<option  value="0">Сортировка</option>
+ 		<option value="3">По названию</option>
+ 		<option value="4">Дата создания</option>
+ 		<option value="5">По Цене</option>
+ 		<option value="6">По состоянию</option>
+ 		<option value="7">По просмотрам</option>
+ 		<option value="8">Закончено</option>
+ 		<option value="9">Опубликовано</option>
+ 	</select> <br><br>
+	<table class="table">
+		<tr>
+			<th><input type = "checkbox" id = "header_chb"></td>
+			<th class = "my_lots_th id_this_elem">ID</td>
+			<th class = "my_lots_th">Заголовок</td>
+			<th class = "my_lots_th">Дата создания</td>
+			<th class = "my_lots_th">Цена</td>
+			<th class = "my_lots_th">Состояние</td>
+			<th class = "my_lots_th">Просмотров</td>
+			<th class = "my_lots_th">Закончено</td>
+			<th class = "my_lots_th">Опубликовано</td>
+		</tr>
+		{% for lot in lots %}
+		<tr class="my_lots_tr">
+			<td><input type="checkbox"></td>
+			<td class="my_lots_td">{{ lot.id }}</td>
+			<td class="my_lots_td">{{lot.Lot_title}}</td>
+			<td class="my_lots_td">{{ lot.Lot_date|date:"d F Y" }}</td>
+			<td class="my_lots_td">{{ lot.Lot_price }}</td>
+			<td class="my_lots_td">{{ lot.Lot_state }}</td>
+			<td class="my_lots_td">{{ lot.Lot_viewv }}</td>			
+			<td class="my_lots_td"><p class="my_lots_boolean">{{ lot.Lot_end }}</p><img src = "" alt = "boolean" width="20"></td>
+			<td class="my_lots_td"><p class="my_lots_boolean">{{ lot.Lot_publick }}</p><img src = "" alt = "boolean" width="20"></td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+
+{% endblock %}

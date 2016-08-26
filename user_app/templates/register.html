@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block login %}
+<div class="register_form center-block form-group">
+	<form action="/user/register/" method="post">
+		<p class="bg-primary">Поля помеченные символом * обязательны для заполнения</p>
+		{% csrf_token %}
+		<div class="warning_error_or_alert alert alert-danger"><p id="error_or_alert">{{ err }}</p></div>
+		{{ form }}
+
+		<input class="btn btn-default" type="submit" value="Зарегистрироваться">
+	</form>
+	<div class="bg-danger reg_err">
+	</div>
+</div>
+{% endblock %}

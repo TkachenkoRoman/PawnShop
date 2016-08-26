@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block Lots %}
+	<div class="categories">
+	{% for Category in categories %}
+	<div class="category">		
+ 			<a href="http://localhost:8181/show/{{Category.id}}/"><p  class="text-center">{{ Category.Category_name }}</p></a>
+			<div class="img_block">
+				<img src="{{ Category.Category_icon.url }}" alt="{{Category.Category_name}}" width="380" class="center-block"><br /><br />
+			</div>
+			<p>{{Category.Category_details}}</p>
+	</div>
+	{% endfor %}
+	</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'main.html' %}
+
+{% block Lots %}
+<div class="lot_detail">
+	<h1  class="text-center">{{ lot.Lot_title }}</h1>
+	<div class="detail_info">
+		<span class="glyphicon glyphicon-edit"></span><p>: {{lot.Lot_date}}</p><br /><br />
+		<span class="glyphicon glyphicon-eye-open"></span><p>: {{lot.Lot_viewv}} </p>
+	</div><br>
+	<div class="full_img_viv center-block">
+		<img src="{{ lot.Lot_main_icon.url }}" alt="{{lot.Lot_title}}" width="350" class="center-block thumbnail" id="full_img_viv"></div>
+		<br /><br />
+	<div class="place_for_prev center-block">
+		<ul>
+			<li class="lot_img_prev"><img src="{{ lot.Lot_main_icon.url }}" alt="{{lot.Lot_title}}" ></li>
+			{% for img in images %}
+			<li class="lot_img_prev"><img src="{{ img.LotPic_img.url }}" alt="{{ img.LotPic_title }}" ></li>
+			{% endfor %}
+		</ul>
+	</div>
+	<div class="informa_ab_lot center-block">
+		<p>Цена: {{ lot.Lot_price }} <span class="glyphicon glyphicon-ruble"></span></p>
+		<p>Состояние: {{ lot.Lot_state }}</p>
+		<p>Продавец: <a href="/user/show/{{lot.User_creator.id}}/">{{ lot.User_creator }}</a></p>
+	</div>
+	<div class="details_lot_content center-block">
+		<p><pre>{{ lot.Lot_details }}</pre></p>
+	</div>
+
+{% for comment in comments %}
+<div class="comment">
+	<p class="comment_author"><span class="glyphicon glyphicon glyphicon-user"></span> {{ comment.comments_autor }}</p>
+	<p class="comment_content">{{ comment.comments_text }}</p>
+</div>
+{% endfor %}
+<hr>
+	<div class="create_comment center-block form-group">
+	<form action="http://localhost:8181/commentapp/add_comment/{{ lot.id }}/" method="post">
+		{% csrf_token %}
+		{{ form }}
+		<br>
+		<input type="submit" class="btn btn-default" value="Добавить комментарий">
+	</form>
+</div>
+
+</div>
+</div>
+</div>
+{% endblock %}

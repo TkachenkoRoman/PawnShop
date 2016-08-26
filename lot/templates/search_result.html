@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+
+{% block search_result %}
+	<ul>
+		{% for result in results %}
+			<li>{{ result.Lot_title }}</li>
+			<li>{{ result.Lot_date }}</li>
+			<li>{{ result.Lot_price }}</li>
+			<li>{{ result.User_creator }}</li>
+		{% endfor %}
+	</ul>
+{% endblock %}

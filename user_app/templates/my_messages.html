@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+
+{% block login %}
+<div class="self_profile">
+	{{ msg }}
+	<img src="{{ this_user.org_pic.url }}" alt="avatart_{{ this_user.organization_name }}" width="200" class="avatar">
+	<div class="menu">
+		<ul>
+			<li><a href="http://localhost:8181/user/show_profil/">Общие данный</a></li>
+			<li><a href="http://localhost:8181/user/show_me_my_lot/">Лоты</a></li>
+			<li><a href="http://localhost:8181/user/my_messages/">Сообщения <span class="badge "> {{ mess_count }} </span></a> </li>
+			<li><a href="http://localhost:8181/user/edit_profile/">Редактировать профиль</a></li>
+			<li><a href="http://localhost:8181/user/change_password/">Изменить пароль</a></li>
+			<li><a href="http://localhost:8181/user/logout/">Выход</a></li>
+		</ul>
+	</div>
+    <div class="messages">
+	    <table class = table>
+            <tr>
+                <th><input type="checkbox"></th>
+                <th><p>ID</p></th>
+                <th>Тема</th>
+                <th>От кого</th>
+                <th>Прочитано</th>
+            </tr>
+            {% for message in my_messages %}
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>{{ message.id }}</td>
+                <td>{{ message.message_subject }}</td>
+                <td>{{ message.mess_from }}</td>
+                {% if message.message_ReadUnread %}
+                    <td><img src="http://localhost:8181/static/img/open_mess.png" alt="YES" width="30"></td>
+                {% else  %}
+                    <td><img src="http://localhost:8181/static/img/new_mess.png" alt="NO" width="27"></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+
+{% block Lots %}
+<div class="popup-bg">
+	<div class="popup_self">
+		<form action="">
+			<input type="text">
+			<input type="text">
+			<input type="submit">
+		</form>
+	</div>
+</div>
+<div class="seller_detail">
+	<img src="{{ seller.org_pic.url }}" alt="{{seller.username}}_avatar" class = "seller_pic">
+	<div class="seller_data_viewe">
+		<p>Название: {{ seller.username }}</p>
+		<p>Телефон: {{ seller.telephone }}</p>
+		<p>Адрес: {{ seller.adress }}</p>
+		<p>Реквизиты: {{ seller.requisits }}</p>
+		<p>Описание: {{ seller.description }}</p>
+		<p>email: {{ seller.email }}</p>
+		<p>Количество товаров: {{length}}</p>
+		<a href="asdasda" class="btn btn-default">Показать все товары Этого продывца</a>
+		<button class="btn btn-default" id="show_popup_seller_email">написать продавцу</button>
+	</div>
+</div>
+{% endblock %}

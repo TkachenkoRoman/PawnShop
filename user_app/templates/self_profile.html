@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+
+{% block login %}
+<div class="self_profile">
+	{{ msg }}
+	<img src="{{ this_user.org_pic.url }}" alt="avatart_{{ this_user.organization_name }}" width="200" class="avatar">
+	<div class="menu">
+		<ul>
+			<li><a href="http://localhost:8181/user/show_profil/">Общие данный</a></li>
+			<li><a href="http://localhost:8181/user/show_me_my_lot/">Лоты</a></li>
+			<li><a href="http://localhost:8181/user/my_messages/">Сообщения <span class="badge ">42</span></a> </li>
+			<li><a href="http://localhost:8181/user/edit_profile/">Редактировать профиль</a></li>
+			<li><a href="http://localhost:8181/user/change_password/">Изменить пароль</a></li>
+			<li><a href="http://localhost:8181/user/logout/">Выход</a></li>
+		</ul>
+	</div>
+	<div class="user_data">
+
+
+		<ul>
+			<li>
+				<p class="profile_name">Профиль: {{ this_user.organization_name }}</p>
+			</li>
+			<li>
+				<p class="date_joined">Дата регистрации: {{ this_user.date_joined|date:"d F Y" }}г.</p>
+			</li>
+			<li>
+				<p class="last_login">Последняя авторизация: {{ this_user.last_login|date:"d F Y" }}г.</p>
+			</li>
+			<li>
+				<p>Описание: {{ this_user.description }}</p>
+			</li>
+			<li>
+				<p>Реквизиты: {{ this_user.requisits }}</p>
+			</li>
+			<li>
+				<p>Адрес: {{ this_user.adress }}</p>
+			</li>
+			<li>
+				<p>Телефон: {{ this_user.telephone }}</p>
+			</li>
+		</ul>
+	</div>
+</div>
+
+{% endblock %}
