@@ -1,0 +1,106 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+
+<html lang='ru'>
+
+<head>
+    <title>
+        PawnShop
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset = utf-8">
+    <meta name="Title" content="Метатег заголовка">
+    <meta name="description" content="Метатег описания страницы">
+    <meta name="keywords" content="Метатег ключевых слов">
+    <link rel="stylesheet" href="{% static "static/css/reset.css" %}" type="text/css">
+    <link rel="stylesheet" href="{% static "static/css/normalaize.css" %}" type="text/css">
+    <link rel="stylesheet" href="{% static "static/css/bootstrap-theme.min.css" %}" type="text/css">
+    <link rel="stylesheet" href="{% static "static/css/bootstrap.min.css" %}" type="text/css">
+    <link rel="stylesheet" href="{% static "static/css/empty.css" %}" type="text/css">
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class=""><a href="/"><span class="glyphicon glyphicon-home"></span> Главная<span class="sr-only">(current)</span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-th"></span> Оцените мою вещь</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> Связаться с нами</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-briefcase"></span> Для партнеров</a></li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                </ul>
+                <form action="search/" class="navbar-form navbar-left" role="search" method = "get">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name = "search_inquiry" placeholder="Введите запрос">
+                    </div>
+                    <button type="submit" class="btn btn-default">Поиск</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                   {% if user.username %}
+                   <li class="btn-xs"><a href="http://localhost:8181/user/show_profil/">Профиль</a></li>
+                   <li class="btn-xs"><a href="/user/logout/"><span class="glyphicon glyphicon-log-out"></span> Выйти ({{ user.username }}) </a></li>
+                   {% else %}
+                   <li class="btn-xs"><a href="/user/login/"><span class="glyphicon glyphicon-log-in"></span> Войти </a></li>
+                   {% endif %}
+
+               </ul>
+           </li>
+       </ul>
+   </div>
+</div>
+</nav>
+<div class="content">
+{% block Lots %}{% endblock %} 
+{% block login %}{% endblock %}
+</div> 
+<div class="footer">
+    <div class="row">
+       <div class="center-block col-sm-12 ">
+           <div class="container">
+               <div class="row">
+               <div class="col-md-2 col-md-offset-2">
+                   <br><br><a href="1">Главная</a><br><br>
+                   <a href="1">Оцените мою вещь</a><br><br>
+                   <a href="1">Связатся с нами</a><br><br>
+                   <a href="1">Для партнеров</a><br><br>
+               </div>
+               <div class="col-md-2 col-md-offset-1">
+                   <br><br><a href="1">Наши новости</a><br><br>
+                   <a href="1">Оцените мою вещь</a><br><br>
+                   <a href="1">Связатся с нами</a><br><br>
+                   <a href="1">Для партнеров</a><br><br>
+               </div>
+               <div class="col-md-2 col-md-offset-1">
+                   <br><br><a href="1">ссылка 1</a><br><br>
+                   <a href="1">ссылка 2</a><br><br>
+                   <a href="1">ссылка 3</a><br><br>
+                   <a href="1">ссылка 4</a><br><br>
+               </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+</div>
+</body>
+<script src="{% static "static/js/jquery-1.11.2.min.js" %}"></script>
+<script src="{% static "static/js/jquery.formset.js" %}"></script>
+<script src="{% static "static/js/bootstrap.min.js" %}"></script>
+<script src="{% static "static/js/empty.js" %}"></script>
+
+
+</html>

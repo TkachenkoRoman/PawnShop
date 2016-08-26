@@ -1,0 +1,440 @@
+body {
+	overflow-x: hidden;
+	display: none; 
+}
+
+.categories a {
+	font-size: 25px;
+}
+
+.category {
+	width: 410px;
+	height: 650px;
+	float: left; 
+	margin: 25px 5px;
+	border: 1px solid #eef;
+	box-shadow: 4px 2px 7px #bbb;
+	padding: 3px;
+}
+
+.category p {
+	text-indent: 10px;
+	padding: 5px;
+	
+}
+
+.Lot {
+	box-shadow: 1px 2px 7px #aaa;
+	min-height: 445px;
+	transition: 0.4s;
+}
+.Lot:hover {
+	background-color: rgba(0, 0, 0, .05);
+	box-shadow: 3px 4px 7px #aaa;
+	transition: 0.4s;
+
+}
+
+.Lot img {
+	max-height: 260px; 
+}
+
+.img_block img {
+	width: 375px;
+	height: 305px;
+}
+
+.comment {
+	width: 560px;
+	min-height: 180px;
+	margin: 15px auto;
+	border: 1px solid #ddd;
+	border-radius: 0 0 6px 6px;
+}
+
+.comment p {
+	padding: 5px;
+}
+
+.comment_author {
+	color: #555;
+	font-size: 17px;
+	width: 100%;
+	background-color: #ddd;
+	font-weight: bolder;
+}
+
+.place_for_prev {
+	width: 560px;
+	height: 130px;
+	background-color: #eee;
+	margin-top: 10px;
+	white-space: nowrap;
+	overflow-y: hidden;
+	overflow-x: scroll; 
+}
+
+.place_for_prev ul, li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.place_for_prev li {
+	height: 110px;
+	width: 130px;
+	display: inline-block;
+}
+
+.place_for_prev img {
+	width: 130px;
+	height: 110px;
+}
+
+.place_for_prev img:hover {
+	background-color: #ccc;
+	cursor: pointer;
+}
+
+.detail_info {
+	width: 270px;
+	height: 100px;
+	background-color: #e5f0ff;
+	color: #777;
+	border:1px solid #cce2ff;
+	border-radius: 0 12px 12px 0;
+	box-shadow: 1px 2px 4px #444;
+}
+
+.detail_info span {
+	font-size: 30px;
+	float: left;
+	margin: 8px 0 0 14px;
+}
+
+.detail_info p {
+	padding: 5px 5px 5px 5px;
+	float: left;
+	margin: 9px 0 0 0px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.lot_detail h1 {
+	color: #444;
+}
+
+.informa_ab_lot {
+	margin-top: 20px;
+	width: 560px;
+	height: 130px;
+	background-color: rgb(63, 130, 188);
+	color: #FFFFFF;
+	font-weight: normal;
+	font-size: 18px;
+	padding: 12px;
+}
+
+.informa_ab_lot p {
+	width: 100%;
+}
+
+.details_lot_content {
+	margin-top: 0px;
+	width: 560px;
+	min-height: 130px;
+	border: 1px solid rgb(63, 130, 188);
+	border-radius: 0 0 6px 6px;
+}
+
+.details_lot_content h4 {
+	padding: 2px;
+}
+
+.informa_ab_lot a {
+	color: #FFFFFF;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.details_lot_content p {
+	text-indent: 15px;
+	padding: 15px;
+}
+
+.full_img_viv {
+	width: 500px;
+	height: 360px;
+}
+
+.create_comment {
+	width: 560px;
+}
+
+.coment_area {
+	height: 120px;
+}
+
+.count_lots {
+	font-weight: bold;
+	margin: 10px 0 0 20px;
+	text-decoration: underline;
+}
+.footer {
+	height: 250px;
+	border-top: 2px solid #ddd;
+	margin-top: 25px;
+	clear: both;
+}
+
+.login_block {
+	width: 550px;
+	height: 450px;
+}
+
+.login_block label {
+	margin-top: 20px;
+}
+
+input[type=submit] { 
+	margin-top: 20px;
+}
+
+.register_form,
+.edit_password_block {
+	width: 550px;
+	min-height: 450px;
+}
+
+.edit_password_block {
+	float: left;
+	margin: 0 0 0 100px;
+}
+
+.register_form label,
+.edit_password_block label{
+	margin-top: 20px;
+	color: #777;
+}
+
+.register_form label:focus {
+	color: #333;
+}
+
+.register_form input[type=submit],
+.edit_password_block input[type=submit] { 
+	margin-top: 20px;
+}
+
+.bg-primary {
+	padding: 15px;
+	font-weight: bold;
+}
+
+.avatar {
+    float: left;
+    margin-bottom: 2px;
+    border: 1px solid #aaa;
+}
+
+.menu {
+    margin: 2px 0 0 0;
+    height: 290px;
+    width: 200px;
+    clear: both;
+    float: left;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu li {
+    height: 45px;
+    margin-top: 1px;
+    border-left: 8px solid #9acccd;
+    background-color: #ebebeb;
+}
+
+.menu li:hover {
+    background-color: #efefef;
+    border-left-color: #59acd8;
+    transition: 0,6;
+}
+
+.menu_li_active {
+    background-color: #fff!important;
+    border-left-color: #56dcd3!important;
+    transition: 0.6s;
+}
+
+.menu a {
+    padding: 13px 0 0 10px;
+    display: block;
+    height: 100%;
+    width: 100%;
+    float: left;
+    text-decoration: none;
+    color: #b1b1b1;
+}
+
+.menu_a_active {
+    color: #56dcd3!important;
+    transition: 0.6s;
+}
+
+.my_lots {
+	float: left;
+    width: 990px;
+    margin: -195px 0 0 30px;
+}
+
+.user_data {
+    height: 500px;
+    width: 1035px;
+    float: left;
+    margin: -443px 0 0 209px;
+    padding: 10px;
+}
+
+.user_data p {
+    color: #6d6d6d;
+}
+
+.profile_name {
+    font-size: 30px;
+    color: #6d6d6d;
+    text-align: center;
+}
+
+.date_joined,
+.last_login {
+    font-size: 20px;
+    color: #696969;
+}
+
+.self_profile {
+	float: left;
+}
+
+.edit_profil_block {
+    width: 700px;
+    margin: 0px 0px 10px 120px;
+    float: left;
+}
+
+.edit_profil_block input[type = "submit"] {
+	margin: 10px  0 0 0;
+}
+
+.edit_profil_block label {
+	margin: 20px 0 5px 0px;
+}
+
+.my_lots_tr:hover {
+	background-color: rgba( 0, 0, 0, .05 );
+	cursor: pointer;
+}
+
+.my_lots td,
+.my_lots th {
+	text-align: center;	
+}
+
+.my_lots_tr:active {
+	background-color: rgba( 0, 0, 0, .2 );
+}
+
+.top_buttons {
+	margin: 0 0 20px 0;
+}
+
+.my_lots_th {
+	cursor: pointer;
+}
+
+.my_lots_boolean {
+	display: none;
+}
+
+.add_my_lot {
+    float: left;
+    width: 900px;
+    margin: -200px 0px 10px 50px;
+}
+
+.add_my_lot label {
+	margin: 15px 0 3px 0;
+}
+
+.add_my_lot input[type = "submit"] {
+	margin: 20px 0 0 0; 
+}
+
+.add_my_lot input[type = "file"] {
+	margin: 20px 0 0 110px; 
+}
+
+.edit_lot {
+    float: left;
+    width: 900px;
+    margin: -40px 0px 10px 50px;
+}
+
+
+.warning_error_or_alert {
+	display: none;
+    margin: 20px auto;
+    border: 1px solid #BD9090;
+}
+
+.seller_data_viewe {
+	float: left;
+    margin: 1px 0 20px 20px;
+}
+
+.seller_pic {
+	float: left;
+	width: 220px;
+}
+
+.popup-bg {
+	position: absolute;
+	background-color: rgba(0, 0, 0, .40);
+	width: 101%;
+	height: 100%;
+	overflow-x:hidden;
+	margin-top: -80px; 
+	z-index: 1000;
+	display: none;
+}
+
+.popup_self {
+	margin: 200px 415px;
+	width: 260px;
+	height: 320px;
+	background-color: rgb(56, 107, 143);
+	border: 1px solid rgb(30, 53, 69);
+	padding: 5px;
+}
+
+.content {
+	min-height: 380px;
+}
+
+.messages {
+    float: left;
+    width: 950px;
+    margin: -140px 0 0 40px;
+    text-align: center;
+}
+
+.messages th {
+    text-align: center;
+    font-weight: bolder;
+}
+
+.messages tr:hover {
+    background-color: rgba(0, 0, 0, .09);
+    cursor: pointer;
+}
